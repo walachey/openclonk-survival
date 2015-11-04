@@ -5,6 +5,8 @@
 	@author Zapper
 */
 
+local Plane = 1;
+
 public func Init()
 {
 	return
@@ -24,10 +26,10 @@ public func Init()
 		{
 			learned = {},
 			available = {},
-			Learn = Skills_Learn,
+			Learn = this.Skills_Learn,
 		},
-		CalculateAttributes = CalculateAttributes,
-		GetAttributeValue = GetAttributeValue,
+		CalculateAttributes = this.CalculateAttributes,
+		GetAttributeValue = this.GetAttributeValue,
 	};
 }
 
@@ -86,7 +88,7 @@ public func Effect()
 		is_base_value = false,
 		factor = 1,
 		exponent = 0,
-		Calculate = Effect_Calculate,
+		Calculate = this.Effect_Calculate,
 	};
 }
 
@@ -110,7 +112,7 @@ public func Stat(int start)
 		{
 			
 		},
-		Calculate = Stat_Calculate,
+		Calculate = this.Stat_Calculate,
 	};
 }
 
@@ -168,8 +170,8 @@ public func Skill(symbol, string name, string description, activate)
 		Description = description,
 		Activate = activate,
 		depends_on = [],
-		SetDependency = Skill_SetDependency,
-		FulfillDependency = Skill_FulfillDependency,
-		CanBeLearned = Skill_CanBeLearned,
+		SetDependency = this.Skill_SetDependency,
+		FulfillDependency = this.Skill_FulfillDependency,
+		CanBeLearned = this.Skill_CanBeLearned,
 	};
 }

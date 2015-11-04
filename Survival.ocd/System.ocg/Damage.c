@@ -11,12 +11,19 @@ static const DMG_Pierce = 102;
 static const DMG_True = 103;
 static const DMG_Cold = 104;
 
+global func GetDamageResistance(int type, int exact_damage)
+{
+	return 0;
+}
+
 global func DealDamage(object to, int exact_damage, int type, int by_player)
 {
+	if (!to) return;
+	
 	by_player = by_player ?? GetController();
 	
 	// Calculate armor.
-	var resistance = to->GetResistance(type, exact_damage);
+	var resistance = to->GetDamageResistance(type, exact_damage);
 	
 	if (resistance != nil)
 	{
@@ -37,7 +44,7 @@ global func DealDamage(object to, int exact_damage, int type, int by_player)
 	}
 	
 	to->~OnDamage(this, exact_damage, type, by_player);
-	to->DoEnergy(exact_damage, true, type, by_player, nil, nil, nil, true);
+	to->DoEnergy(-exact_damage, true, type, by_player, nil, nil, nil, true);
 }
 
 global func DoEnergy(a, b, c, d, e, f, g, overwrite)

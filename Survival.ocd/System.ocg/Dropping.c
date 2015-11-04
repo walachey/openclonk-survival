@@ -6,17 +6,17 @@ func GetDroppableItems()
 		common = 
 		{
 			rarity = 100,
-			objects = [Flare, Coke, AmmunitionSmall]
+			objects = [nil]
 		},
 		medium = 
 		{
 			rarity = 500,
-			objects = [AmmunitionLarge, Medipack]
+			objects = [nil]
 		},
 		rare =
 		{
 			rarity = 900,
-			objects = [Weapons]
+			objects = [nil]
 		}
 	};
 }
