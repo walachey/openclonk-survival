@@ -1,0 +1,6 @@
+[DefCore]
+id=Stats
+Version=7,0
+Category=C4D_None
+Width=1
+Height=1
