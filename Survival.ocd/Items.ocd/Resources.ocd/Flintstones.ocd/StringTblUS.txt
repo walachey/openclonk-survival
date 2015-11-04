@@ -1,0 +1,2 @@
+Name=Flintstones
+Description=Sharp stone fragments. Can be thrown.

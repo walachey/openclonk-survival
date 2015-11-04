@@ -1,0 +1,2 @@
+Name=Flintstone
+Description=Scharfe Steinfragmente. Können geworfen werden.

@@ -1,0 +1,15 @@
+[DefCore]
+id=Flintstones
+Version=7,0
+Category=C4D_Object
+Width=4
+Height=4
+Offset=-2,-2
+Vertices=2
+VertexX=-1,1
+VertexY=2, 2
+VertexFriction=50,50
+Value=1
+Mass=2
+Components=Stone=2
+
