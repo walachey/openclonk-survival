@@ -125,7 +125,7 @@ private func FxStatusBleedingStart(object target, effect fx, temp)
 private func FxStatusBleedingTimer(object target, effect fx, int time)
 {
 	if (!Random(5))
-		target->CreateParticleAtBone("SphereSpark", "skeleton_head", [0, 0, 0], [0, 0, RandomX(200, 300)], PV_Random(10, 30), fx.particles, 20); 
+		target->CreateParticleAtBone("SphereSpark", "skeleton_head", [0, 0, 0], [0, 0, -RandomX(200, 300)], PV_Random(10, 30), fx.particles, 20); 
 	DealDamage(target, 100, DMG_True);
 }
 
@@ -147,6 +147,7 @@ private func FxStatusUnconsciousStart(object target, effect fx, temp)
 {
 	if (temp) return;
 	target->SetAction("Unconscious");
+	target->SetTurnForced(target->GetDir());
 }
 
 private func FxStatusUnconsciousTimer(object target, effect fx)
@@ -159,4 +160,5 @@ private func FxStatusUnconsciousStop(object target, effect fx, int reason, temp)
 {
 	if (temp) return;
 	target->SetAction("KneelUp");
+	target->SetTurnForced(-1);
 }
