@@ -1,0 +1,2 @@
+Name=Primitive Spikes
+Description=Pointy trap.
