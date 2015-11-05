@@ -1,0 +1,2 @@
+Name=Primitive Darts
+Description=Spitze Pfeile. Können geworfen werden.
