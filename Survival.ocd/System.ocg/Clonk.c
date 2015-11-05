@@ -126,7 +126,7 @@ private func FxStatusBleedingTimer(object target, effect fx, int time)
 {
 	if (!Random(5))
 		target->CreateParticleAtBone("SphereSpark", "skeleton_head", [0, 0, 0], [0, 0, RandomX(200, 300)], PV_Random(10, 30), fx.particles, 20); 
-	DealDamage(target, 250, DMG_True);
+	DealDamage(target, 100, DMG_True);
 }
 
 private func FxStatusFractureStart(object target, effect fx, temp)
