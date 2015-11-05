@@ -1,4 +1,4 @@
-global func Normal(int mid, int deviation)
+global func NormalRandom(int mid, int deviation)
 {
 	mid = mid ?? 500;
 	deviation /= 2;
