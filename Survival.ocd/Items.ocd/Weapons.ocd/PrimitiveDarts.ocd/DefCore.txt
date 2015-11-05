@@ -12,4 +12,4 @@ VertexFriction=50,50
 Value=4
 Mass=2
 Components=Flintstones=5;Wood=2
-
+Rotate=1

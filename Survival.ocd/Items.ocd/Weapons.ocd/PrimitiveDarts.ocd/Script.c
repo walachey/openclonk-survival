@@ -27,6 +27,10 @@ public func DoThrow(object clonk, int angle)
 	
 	this.aiming = -1;
 	clonk->UpdateAttach();
+	
+	javelin->SetGraphics(nil, Javelin);
+	javelin->SetR(angle);
+	javelin.MeshTransformation = Trans_Scale(500, 500, 500);
 }
 
 public func HitObject(object obj)
