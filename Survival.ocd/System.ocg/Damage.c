@@ -44,6 +44,7 @@ global func DealDamage(object to, int exact_damage, int type, int by_player)
 	}
 	
 	to->~OnDamage(this, exact_damage, type, by_player);
+	to->~CatchBlow(-exact_damage/1000, this);
 	to->DoEnergy(-exact_damage, true, type, by_player, nil, nil, nil, true);
 }
 
@@ -54,4 +55,12 @@ global func DoEnergy(a, b, c, d, e, f, g, overwrite)
 		this.LastDamagingObject = nil;
 	}
 	return inherited(a, b, c, d, e, f, g, overwrite, ...);
+}
+
+
+global func WeaponDamage(object target, int damage, int damage_type, bool exact_damage)
+{
+	if (!exact_damage) damage *= 1000;
+
+	return DealDamage(target, damage, damage_type);
 }
