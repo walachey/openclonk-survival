@@ -5,6 +5,8 @@ func Initialize()
 	chest->CreateContents(Flintstones, 5);
 	chest->CreateContents(PrimitiveDarts, 5);
 	chest->CreateContents(PrimitiveSpikes, 5);
+	chest->CreateContents(Sword, 5);
+	
 	chest->CreateContents(MushroomPowder, 5);
 	chest->CreateContents(Fiber, 5);
 	
