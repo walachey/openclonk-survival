@@ -1,0 +1,2 @@
+Name=Mushroom Powder
+Description=Grinded mushrooms.
