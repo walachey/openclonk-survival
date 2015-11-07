@@ -13,10 +13,12 @@ public func Construction()
 	
 	// Add "unconscious" action.
 	ActMap.Unconscious = {
+		Name = "Unconscious",
 		Prototype = ActMap.Dead,
 		StartCall = "StartUnconscious",
 		StopCall = "StopUnconscious",
-		AbortCall = "StopUnconscious"
+		AbortCall = "StopUnconscious",
+		NoOtherAction = 0,
 	};
 	
 	return _inherited(...);
@@ -24,7 +26,8 @@ public func Construction()
 
 private func StartUnconscious()
 {
-	this.UnconsciousAnimation = PlayAnimation("Dead", CLONK_ANIM_SLOT_Death, Anim_Linear(0, 0, GetAnimationLength("Dead"), 20, ANIM_Hold), Anim_Linear(0, 0, 1000, 5, ANIM_Remove));
+	if (this.UnconsciousAnimation == nil)
+		this.UnconsciousAnimation = PlayAnimation("Dead", CLONK_ANIM_SLOT_Death, Anim_Linear(0, 0, GetAnimationLength("Dead"), 20, ANIM_Hold), Anim_Linear(0, 0, 1000, 5, ANIM_Hold));
 	// Update carried items
 	this->UpdateAttach();
 	// Set proper turn type
@@ -33,9 +36,19 @@ private func StartUnconscious()
 
 private func StopUnconscious()
 {
-	if (this.UnconsciousAnimation)
-		StopAnimation(this.UnconsciousAnimation);
+	if (this.UnconsciousAnimation != nil)
+	{
+		SetAnimationWeight(this.UnconsciousAnimation, Anim_Linear(1000, 1000, 0, 10, ANIM_Remove));
+		var fx = AddEffect("IntScheduleRemoveAnimation", this, 1, 5, this);
+		fx.anim = this.UnconsciousAnimation;
+	}
 	this.UnconsciousAnimation = nil;
+}
+
+private func FxIntScheduleRemoveAnimationTimer(object target, effect fx)
+{
+	StopAnimation(fx.anim);
+	return -1;
 }
 
 private func DegenerateDamage()
@@ -158,7 +171,15 @@ private func FxStatusUnconsciousTimer(object target, effect fx)
 
 private func FxStatusUnconsciousStop(object target, effect fx, int reason, temp)
 {
-	if (temp) return;
-	target->SetAction("KneelUp");
-	target->SetTurnForced(-1);
+	if (temp || !target) return;
+	if (target->GetAlive())
+	{
+		target->SetAction("Kneel");
+		target->SetTurnForced(-1);
+	
+		var duration = 15;
+		var length = target->GetAnimationLength("KneelDown");
+		target->PlayAnimation("KneelDown", CLONK_ANIM_SLOT_Movement, Anim_Linear(length, length, 0, duration, ANIM_Remove), Anim_Linear(0, 0, 1000, 5, ANIM_Hold));
+		ScheduleCall(target, "EndKneel", duration, 1);
+	}
 }
