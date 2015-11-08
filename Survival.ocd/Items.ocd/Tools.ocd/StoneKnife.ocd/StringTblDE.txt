@@ -1,0 +1,6 @@
+Name=Steinmesser
+Description=Kann benutzt werden um Tiere zu zerlegen.
+
+KnifeStrength=Messerstärke
+WeaponStrength=Schaden
+Durability=Haltbarkeit

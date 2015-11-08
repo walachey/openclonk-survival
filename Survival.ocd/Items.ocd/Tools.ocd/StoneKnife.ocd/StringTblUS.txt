@@ -1,0 +1,6 @@
+Name=Stone Knife
+Description=Can be used to dissect animals.
+
+KnifeStrength=Knife strength
+WeaponStrength=Damage
+Durability=Durability

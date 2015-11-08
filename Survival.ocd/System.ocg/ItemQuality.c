@@ -51,8 +51,12 @@ global func SetQualityBonus(int bonus)
 	}
 	
 	var name = this->GetName();
+	var had_quality = false;
 	if (this.QualityBonus)
+	{
 		name = this.Prototype->GetName();
+		had_quality = true;
+	}
 	this.Name = Format("<c %x>%s %s</c>", quality_color, quality_name, name);
 	this.QualityBonus = bonus;
 	
@@ -68,8 +72,7 @@ global func SetQualityBonus(int bonus)
 		remaining_bonus -= step;
 	}
 	
-	var quality_description_label = "";
-	var quality_description_number= "|";
+	var description = "";
 	var quality_hash = 0;
 	
 	for (var i = 0; i < property_count; i += 1)
@@ -81,19 +84,20 @@ global func SetQualityBonus(int bonus)
 		var full_bonus = property.FullBonus;
 		
 		var actual_bonus = pooled_bonus * full_bonus / 100;
-		var breaks = "||";
-		if (i == property_count - 1) breaks = "";
+
+		var first_comma = ", ";
+		if (i == 0) first_comma = "";
+		description = Format("%s%s<c ff999900>%s</c>: %d+%d", description, first_comma, property.Name, base, actual_bonus);
 		
-		quality_description_label = Format("%s%s:%s", quality_description_label, property.Name, breaks);
-		quality_description_number= Format("%s%2d + %2d%s", quality_description_number, base, actual_bonus, breaks);
 		this[properties[i]] = base + actual_bonus;
 		
 		quality_hash = 2 * quality_hash + actual_bonus;
 	}
 	
+	this.Description    = this.Description;
+	if (had_quality) this.Description = this.Prototype.Description;
+	this.Description = Format("%s|%s", description, this.Description);
 	this.QualityHash    = this.QualityBonus + 100 * quality_hash;
-	this.QualityLabels  = quality_description_label;
-	this.QualityNumbers = quality_description_number;
 	
 	return true;
 }
