@@ -1,2 +1,2 @@
-Name=Mushroom Powder
-Description=Grinded mushrooms.
+Name=Fiber
+Description=Used to tie things together.

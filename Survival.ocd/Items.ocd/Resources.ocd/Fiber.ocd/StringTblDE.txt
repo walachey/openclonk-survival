@@ -1,2 +1,2 @@
-Name=Pilzpulver
-Description=Gemahlene Pilze.
+Name=Fasern
+Description=Werden benutzt um Dinge aneinander zu binden.
