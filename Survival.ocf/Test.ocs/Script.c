@@ -6,7 +6,9 @@ func Initialize()
 	chest->CreateContents(PrimitiveDarts, 5);
 	chest->CreateContents(PrimitiveSpikes, 5);
 	chest->CreateContents(Sword, 5);
-	
+	chest->CreateContents(Sword)->SetQualityBonus(50);
+	chest->CreateContents(Sword)->SetQualityBonus(100);
+	chest->CreateContents(Sword)->SetQualityBonus(200);
 	chest->CreateContents(MushroomPowder, 5);
 	chest->CreateContents(Fiber, 5);
 	

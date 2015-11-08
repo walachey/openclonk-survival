@@ -1,0 +1,8 @@
+QualityFine=Fine
+QualitySuperior=Superior
+QualityMaster=Masterful
+
+Durability=Durability
+Damage=Damage
+
+Contains=Contains

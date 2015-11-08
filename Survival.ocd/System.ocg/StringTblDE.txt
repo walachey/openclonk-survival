@@ -1,0 +1,8 @@
+QualityFine=Fein ~
+QualitySuperior=Besonders ~
+QualityMaster=Meisterhaft ~
+
+Durability=Haltbarkeit
+Damage=Schaden
+
+Contains=Enthält
