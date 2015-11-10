@@ -44,8 +44,8 @@ global func DealDamage(object to, int exact_damage, int type, int by_player)
 	}
 	
 	to->~OnDamage(this, exact_damage, type, by_player);
-	to->~CatchBlow(-exact_damage/1000, this);
-	to->DoEnergy(-exact_damage, true, type, by_player, nil, nil, nil, true);
+	if (to) to->~CatchBlow(-exact_damage/1000, this);
+	if (to) to->DoEnergy(-exact_damage, true, type, by_player, nil, nil, nil, true);
 }
 
 global func DoEnergy(a, b, c, d, e, f, g, overwrite)
