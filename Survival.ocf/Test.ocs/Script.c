@@ -18,6 +18,8 @@ func Initialize()
 	CreateObjectAbove(StrawMan, 110, 200, -1);
 	CreateObjectAbove(StrawMan, 130, 200, -1);
 	
+	PricklyPear->Place(3, Shape->Rectangle(LandscapeWidth()/2, 0, LandscapeWidth()/2, LandscapeHeight()));
+	
 	var c = CreateObjectAbove(Ruin_ChemicalLab, 250, 200, -1);
 	AddEffect("Toxic", c, 1, 30);
 }
