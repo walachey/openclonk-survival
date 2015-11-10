@@ -1,0 +1,12 @@
+[DefCore]
+id=Amphora
+Version=4,10,0,0
+Category=C4D_None
+Width=10
+Height=15
+Offset=-5,-7
+Vertices=3
+VertexX=0,-4,4
+VertexY=6, -4, -4
+VertexFriction=200, 200, 200
+Rotate=1

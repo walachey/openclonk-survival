@@ -1,0 +1,2 @@
+Name=Amphore
+Description=Kann Schätze verbergen.

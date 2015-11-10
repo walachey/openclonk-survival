@@ -1,0 +1,2 @@
+Name=Amphora
+Description=Can contain treasures.
