@@ -64,3 +64,17 @@ global func WeaponDamage(object target, int damage, int damage_type, bool exact_
 
 	return DealDamage(target, damage, damage_type);
 }
+
+global func MakeDestroyable_OnDamage(object by, int damage, int type, int by_player)
+{
+	this.Hitpoints = BoundBy(this.Hitpoints - damage, 0, this.MaxHitpoints);
+	if (this.Hitpoints <= 0) this->~Death(by_player);
+	if (this && this._OnDamage) this->_OnDamage(by, damage, type, by_player);
+}
+
+global func MakeDestroyable()
+{
+	this.Hitpoints = this.MaxHitpoints;
+	this._OnDamage = this.OnDamage;
+	this.OnDamage = Global.MakeDestroyable_OnDamage;
+}
