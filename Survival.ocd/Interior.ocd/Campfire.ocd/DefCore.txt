@@ -1,0 +1,11 @@
+[DefCore]
+id=Campfire
+Version=4,10,0,0
+Category=C4D_Structure
+Width=10
+Height=5
+Offset=-5,-2
+Vertices=3
+VertexX=0,-4,4
+VertexY=2, -2, -2
+VertexFriction=200, 200, 200

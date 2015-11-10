@@ -19,6 +19,7 @@ func Initialize()
 	CreateObjectAbove(StrawMan, 130, 200, -1);
 	
 	CastObjects(Amphora, 5, 10, 200, 150);
+	CreateObject(Campfire, 150, 190)->CreateContents(Wood, 10);
 	
 	PricklyPear->Place(3, Shape->Rectangle(LandscapeWidth()/2, 0, LandscapeWidth()/2, LandscapeHeight()));
 	

@@ -1,0 +1,2 @@
+Name=Lagerfeuer
+Description=Kann benutzt werden um einfaches Essen zuzubereiten.
