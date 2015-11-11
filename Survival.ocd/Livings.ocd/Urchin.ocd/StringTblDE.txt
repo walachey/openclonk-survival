@@ -1,0 +1,2 @@
+Name=Höhlenigel
+Description=Stachelig, aber eigentlich friedfertig.

@@ -25,6 +25,13 @@ func Initialize()
 	
 	var c = CreateObjectAbove(Ruin_ChemicalLab, 350, 200, -1);
 	AddEffect("Toxic", c, 1, 30);
+	
+	var cave = Landscape_Cave->Place(1, Shape->Rectangle(0, LandscapeHeight()/2 - 50, LandscapeWidth(), LandscapeHeight()/2 + 50), {width = 200 + Random(50), height = 100 + Random(50), borderheight = 0, bordermat = "Earth", bordertex = "earth" });
+	if (GetLength(cave))
+	{
+		cave = cave[0];
+		CastObjects(Urchin, 5, 30, cave->GetX(), cave->GetY());
+	}
 }
 
 func InitializePlayer(int plr)
