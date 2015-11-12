@@ -18,6 +18,9 @@ func Initialize()
 	chest->CreateContents(Sproutberry, 10);
 	chest->CreateContents(CookedMushroom, 10);
 	chest->CreateContents(Mushroom, 10);
+	chest->CreateContents(WoodenKey, 10);
+	chest->CreateContents(SilverKey, 10);
+	chest->CreateContents(GoldenKey, 10);
 	
 	chest->AddOpeningCallback(Scenario.OnChestOpen);
 	

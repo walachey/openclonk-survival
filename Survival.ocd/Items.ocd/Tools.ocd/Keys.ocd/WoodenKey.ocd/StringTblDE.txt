@@ -1,0 +1,2 @@
+Name=Holzschlüssel
+Description=Öffnet einfache Schlösser.

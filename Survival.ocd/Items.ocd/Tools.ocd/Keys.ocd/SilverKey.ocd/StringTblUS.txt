@@ -1,0 +1,2 @@
+Name=Silver key
+Description=Opens some advanced locks.

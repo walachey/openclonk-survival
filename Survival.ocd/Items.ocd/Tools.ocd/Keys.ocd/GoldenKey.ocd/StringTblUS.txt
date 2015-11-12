@@ -1,0 +1,2 @@
+Name=Golden key
+Description=Opens even the most sophisticated locks.

@@ -1,0 +1,2 @@
+Name=Goldschlüssel
+Description=Öffnet auch die kompliziertesten Schlösser.

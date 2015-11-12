@@ -1,0 +1,15 @@
+[DefCore]
+id=GoldenKey
+Version=7,0
+Category=C4D_Object
+Width=8
+Height=8
+Offset=-4,-4
+Vertices=2
+VertexX=-2,2
+VertexY=4, 4
+VertexFriction=50,50
+Value=30
+Mass=5
+Components=Nuget=10
+

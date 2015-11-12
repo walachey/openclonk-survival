@@ -1,0 +1,2 @@
+Name=Wooden key
+Description=Opens just the simplest locks.

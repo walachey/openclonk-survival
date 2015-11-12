@@ -1,0 +1,2 @@
+Name=Silberschlüssel
+Description=Öffnet fortgeschrittene Schlösser.

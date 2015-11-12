@@ -1,5 +1,6 @@
 #appendto Chest
 
+local key_quality = "wooden";
 local skin;
 local is_locked;
 
@@ -39,7 +40,7 @@ public func Interact(object clonk)
 {
 	if (is_locked)
 	{
-		var key = FindObject(Find_Container(clonk), Find_Func("IsKey"), Find_Func("CanUnlock", skin));
+		var key = FindObject(Find_Container(clonk), Find_Func("IsKey"), Find_Func("CanUnlock", key_quality));
 		if (key)
 		{
 			is_locked = false;
