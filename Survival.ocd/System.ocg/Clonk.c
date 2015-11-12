@@ -5,6 +5,11 @@ public func Construction()
 	this.BleedDamage = 0;
 	this.FractureDamage = 0;
 	this.Daze = 0;
+	this.MaxHunger = 1000;
+	this.MaxThirst = 1000;
+	this.Hunger = 0;
+	this.Thirst = 0;
+	this.HitpointRegenerationSpeed = 50;
 	AddTimer("DegenerateDamage", 10);
 	
 	// Make ActMap writeable.
@@ -56,6 +61,54 @@ private func DegenerateDamage()
 	this.BleedDamage = Max(this.BleedDamage - 10000, 0);
 	this.FractureDamage = Max(this.FractureDamage - 10000, 0);
 	this.Daze = Max(this.Daze - 1000, 0);
+	
+	var hunger_rate = 1;
+	
+	if (this.Hunger == this.MaxHunger || this.Thirst == this.MaxThirst)
+	{
+		DealDamage(this, 50, DMG_True);
+	}
+	else // regenerate!
+	{
+		var hp_missing = this.MaxEnergy - GetEnergy() * 1000;
+	
+		if (hp_missing > 0)
+		{
+			var rate = this.HitpointRegenerationSpeed;
+			if (this.Hunger < this.MaxHunger/2) rate *= 2;
+			else if (this.Hunger > 3 * this.MaxHunger / 4) rate = 0;
+			if (rate != 0)
+			{
+				DoEnergy(rate, true,  FX_Call_EngBaseRefresh);
+				hunger_rate += rate / 10;
+			}
+		}
+	}
+	
+	DoHunger(hunger_rate);
+	DoThirst(1);
+}
+
+public func DoHunger(int change)
+{
+	this.Hunger = BoundBy(this.Hunger + change, 0, this.MaxHunger);
+}
+
+public func DoThirst(int change)
+{
+	this.Thirst = BoundBy(this.Thirst + change, 0, this.MaxThirst);
+}
+
+public func Eat(object food)
+{
+	if(GetProcedure() == "WALK")
+	{
+		DoHunger(-food->~NutritionalValue());
+		DoThirst(-food->~WaterValue());
+		food->RemoveObject();
+		Sound("Munch?");
+		SetAction("Eat");
+	}
 }
 
 public func DoDaze(int amount)

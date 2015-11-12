@@ -14,6 +14,11 @@ func Initialize()
 	chest->CreateContents(MushroomPowder, 5);
 	chest->CreateContents(Fiber, 5);
 	
+	chest->CreateContents(Bread, 10);
+	chest->CreateContents(Sproutberry, 10);
+	chest->CreateContents(CookedMushroom, 10);
+	chest->CreateContents(Mushroom, 10);
+	
 	CreateObjectAbove(StrawMan, 80, 200, -1);
 	CreateObjectAbove(StrawMan, 110, 200, -1);
 	CreateObjectAbove(StrawMan, 130, 200, -1);
