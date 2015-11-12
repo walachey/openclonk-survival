@@ -6,3 +6,11 @@ Durability=Haltbarkeit
 Damage=Schaden
 
 Contains=Enthält
+
+# Chest
+Open=Öffnen
+NeedsKey=Die Kiste ist abgeschlossen und braucht einen Schlüssel.
+Locked=Abgeschlossen.
+WrongKey=Der Schlüssel passt nicht.
+LockedInfoTxt=Diese %s ist abgeschlossen|Zum Öffnen wird ein passender Schlüssel gebraucht.
+ClosedInfoTxt=Um an die Schätze und Gefahren in dieser Kiste zu kommen, musst du sie öffnen.

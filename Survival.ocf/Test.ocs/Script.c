@@ -19,6 +19,10 @@ func Initialize()
 	chest->CreateContents(CookedMushroom, 10);
 	chest->CreateContents(Mushroom, 10);
 	
+	var locked_chest = CreateObjectAbove(Chest, 70, 200, -1);
+	locked_chest->SetLocked();
+	locked_chest->CreateContents(Nugget);
+	
 	CreateObjectAbove(StrawMan, 80, 200, -1);
 	CreateObjectAbove(StrawMan, 110, 200, -1);
 	CreateObjectAbove(StrawMan, 130, 200, -1);
