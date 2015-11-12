@@ -3,9 +3,17 @@
 local skin;
 local is_locked;
 
+local opening_callbacks;
+
 public func IsContainer() { return is_open; }
 public func RejectCollect() { return is_open == false; }
 
+
+public func AddOpeningCallback(callback)
+{
+	if (!opening_callbacks) opening_callbacks = [];
+	PushBack(opening_callbacks, callback);
+}
 
 public func SetLocked(bool lock)
 {
@@ -51,9 +59,21 @@ public func Interact(object clonk)
 		}
 	}
 	
-	if (!is_open) return Open();
+	if (!is_open) return Open(clonk);
 }
 
+private func Open(object by)
+{
+	if (is_open) return;
+	if (opening_callbacks)
+	{
+		for (var callback in opening_callbacks)
+		{
+			this->Call(callback, by);
+		}
+	}
+	return inherited(by, ...);
+}
 
 /*-- Interaction --*/
 

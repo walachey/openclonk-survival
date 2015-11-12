@@ -19,6 +19,8 @@ func Initialize()
 	chest->CreateContents(CookedMushroom, 10);
 	chest->CreateContents(Mushroom, 10);
 	
+	chest->AddOpeningCallback(Scenario.OnChestOpen);
+	
 	var locked_chest = CreateObjectAbove(Chest, 70, 200, -1);
 	locked_chest->SetLocked();
 	locked_chest->CreateContents(Nugget);
@@ -41,6 +43,28 @@ func Initialize()
 		cave = cave[0];
 		CastObjects(Urchin, 5, 30, cave->GetX(), cave->GetY());
 	}
+}
+
+func OnChestOpen(object clonk)
+{
+	AddEffect("CastSparks", this, 1, 1, nil, nil);
+}
+
+global func FxCastSparksStart(object target, effect fx)
+{
+	fx.particles = 
+	{
+		Prototype = Particles_Glimmer(),
+		Size = 1,
+		DampingY = PV_Linear(PV_Random(1000, 900), PV_Random(800, 900)),
+		ForceX = PV_Random(-10, 10, 5)
+	};
+}
+
+global func FxCastSparksTimer(object target, effect fx, int time)
+{
+	if (time > 36) return -1;
+	target->CreateParticle("StarSpark", PV_Random(-6, 6), PV_Random(2, 5), PV_Random(-10, 10), PV_Random(-time * 6, -20), PV_Random(100, 600), fx.particles, 50);
 }
 
 func InitializePlayer(int plr)
