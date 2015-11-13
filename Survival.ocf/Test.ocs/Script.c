@@ -28,6 +28,13 @@ func Initialize()
 	locked_chest->SetLocked();
 	locked_chest->CreateContents(Nugget);
 	
+	chest = CreateObjectAbove(Chest, 15, 200, -1);
+	chest->AssignChestLootRarity(200);
+	chest = CreateObjectAbove(Chest, 25, 200, -1);
+	chest->AssignChestLootRarity(600);
+	chest = CreateObjectAbove(Chest, 35, 200, -1);
+	chest->AssignChestLootRarity(900);
+	
 	CreateObjectAbove(StrawMan, 80, 200, -1);
 	CreateObjectAbove(StrawMan, 110, 200, -1);
 	CreateObjectAbove(StrawMan, 130, 200, -1);
