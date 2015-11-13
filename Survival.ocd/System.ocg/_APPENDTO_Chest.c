@@ -1,7 +1,6 @@
 #appendto Chest
 
 local key_quality = "wooden";
-local skin;
 local is_locked;
 
 local opening_callbacks;
@@ -21,9 +20,10 @@ public func SetLocked(bool lock)
 	is_locked = lock ?? true;
 }
 
-public func SetSkin(string new_skin)
+public func LockWithKeyQuality(string new_quality)
 {
-	skin = new_skin;
+	key_quality = new_quality;
+	is_locked = true;
 }
 
 public func GetInteractionMetaInfo(object clonk)
@@ -73,6 +73,10 @@ private func Open(object by)
 			this->Call(callback, by);
 		}
 	}
+	
+	if (ContentsCount() == 0)
+		CreateLootContents();
+	
 	return inherited(by, ...);
 }
 
