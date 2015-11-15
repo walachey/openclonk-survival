@@ -10,31 +10,33 @@ public func IsContainer()
 
 public func RejectCollect(object obj)
 {
-	
+	if (!obj->~CookTo() && !obj->~GetFuelAmount()) return true;
+	return false;
 }
 
 public func Collection2(object obj)
 {
-	var fuel_amount = obj->~GetFuelAmount();
-	
-	if (fuel_amount)
-	{
-		this.fuel += fuel_amount;
-		CheckFuel();
-		obj->RemoveObject();
-		return;
-	}
-	
 	CheckFuel();
 }
 
 public func CheckFuel()
 {
-	var full = ContentsCount() > 0;
+	var full = FindObject(Find_Container(this), Find_Func("CookTo")) != nil;
 	var burning = GetEffect("IntBurning", this);
 	var fueled = fuel > 5;
 	
-	if (fueled && !burning)
+	if (full && !fueled)
+	{
+		var new_fuel = FindObject(Find_Container(this), Find_Func("GetFuelAmount"));
+		if (new_fuel)
+		{
+			this.fuel += new_fuel->GetFuelAmount();
+			new_fuel->RemoveObject();
+			fueled = fuel > 5;
+		}
+	}
+	
+	if (full && fueled && !burning)
 	{
 		Sound("Inflame");
 		AddEffect("IntBurning", this, 1, 2, this);
@@ -47,7 +49,11 @@ public func CheckFuel()
 
 public func RoastFood()
 {
-
+	var obj = FindObject(Find_Container(this), Find_Func("CookTo"));
+	if (!obj) return;
+	var cook_to_ID = obj->CookTo();
+	CreateContents(cook_to_ID);
+	obj->RemoveObject();
 }
 
 public func Definition()
@@ -103,11 +109,11 @@ private func FxIntBurningStart(object target, effect fx, int temporary)
 
 private func FxIntBurningTimer (object target, effect fx, int time)
 {
-	if (time % 4 == 0)
+	if (time % 8 == 0)
 	{
 		fuel -= 1;
-		if (time % 20 == 0) CheckFuel();
-		if (time % (32 * 3) == 0) RoastFood();
+		if (time % 24 == 0) CheckFuel();
+		if (time % (32 * 6) == 0) RoastFood();
 	}
 	// If the torched is attached or fixed it should emit some fire and smoke particles.
 	CreateParticle("FireSharp", PV_Random(-1, 2), PV_Random(0, -3), PV_Random(-2, 2), PV_Random(-10, -5), 10 + Random(3), fx.flame, 8);

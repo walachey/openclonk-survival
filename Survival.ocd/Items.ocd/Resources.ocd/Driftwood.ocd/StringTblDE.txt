@@ -1,0 +1,2 @@
+Name=Nasses Treibholz
+Description=Muss erst am Feuer getrocknet werden.

@@ -9,3 +9,8 @@ public func WaterValue()
 {
 	return 50;
 }
+
+public func CookTo()
+{
+	return CookedMushroom;
+}

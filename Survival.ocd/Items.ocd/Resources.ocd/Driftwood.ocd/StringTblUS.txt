@@ -1,0 +1,2 @@
+Name=Soaked Driftwood
+Description=Has to be dried at a fireplace first.

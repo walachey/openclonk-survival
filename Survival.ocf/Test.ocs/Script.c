@@ -13,6 +13,7 @@ func Initialize()
 	chest->CreateContents(StoneKnife)->SetQualityBonus(200);
 	chest->CreateContents(MushroomPowder, 5);
 	chest->CreateContents(Fiber, 5);
+	chest->CreateContents(Driftwood, 10);
 	
 	chest->CreateContents(Bread, 10);
 	chest->CreateContents(Sproutberry, 10);
