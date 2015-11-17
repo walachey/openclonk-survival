@@ -1,0 +1,2 @@
+Name=Azurite pillar
+Description=Can be mined with a pickaxe.

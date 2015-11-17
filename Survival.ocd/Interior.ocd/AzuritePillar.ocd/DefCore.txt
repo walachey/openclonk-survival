@@ -1,0 +1,12 @@
+[DefCore]
+id=AzuritePillar
+Version=6,0
+Category=C4D_None
+Width=10
+Height=20
+Offset=-5,-10
+Vertices=3
+VertexX=0,-4,4
+VertexY=7, -4, -4
+VertexFriction=200, 200, 200
+Rotate=1

@@ -1,0 +1,2 @@
+Name=Malachite pillar
+Description=Can be mined with a pickaxe.

@@ -1,0 +1,2 @@
+Name=Malachitsäule
+Description=Kann mit einer Spitzhake abgebaut werden.

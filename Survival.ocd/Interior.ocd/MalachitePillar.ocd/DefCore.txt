@@ -1,0 +1,12 @@
+[DefCore]
+id=MalachitePillar
+Version=6,0
+Category=C4D_None
+Width=15
+Height=20
+Offset=-7,-10
+Vertices=3
+VertexX=0,-5,5
+VertexY=7, -4, -4
+VertexFriction=200, 200, 200
+Rotate=1

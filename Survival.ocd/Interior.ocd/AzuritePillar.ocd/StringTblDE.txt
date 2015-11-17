@@ -1,0 +1,2 @@
+Name=Azuritsäule
+Description=Kann mit einer Spitzhake abgebaut werden.

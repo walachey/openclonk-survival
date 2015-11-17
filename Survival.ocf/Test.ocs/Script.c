@@ -22,6 +22,8 @@ func Initialize()
 	chest->CreateContents(WoodenKey, 10);
 	chest->CreateContents(SilverKey, 10);
 	chest->CreateContents(GoldenKey, 10);
+	chest->CreateContents(Pickaxe, 5);
+	chest->CreateContents(Shovel, 5);
 	
 	chest->AddOpeningCallback(Scenario.OnChestOpen);
 	
@@ -53,6 +55,13 @@ func Initialize()
 	{
 		cave = cave[0];
 		CastObjects(Urchin, 5, 30, cave->GetX(), cave->GetY());
+	}
+	
+	DigFreeRect(50, 220, 400, 50, true);
+	for (var i = 0; i < 5; ++i)
+	{
+		CreateObject(AzuritePillar, 75 + Random(75), 230, -1);
+		CreateObject(MalachitePillar, 120 + Random(75), 230, -1);
 	}
 }
 
