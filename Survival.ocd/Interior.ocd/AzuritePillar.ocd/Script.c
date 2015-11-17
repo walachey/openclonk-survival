@@ -8,6 +8,7 @@ public func Construction()
 	this.Hits = 0;
 	this.MeshTransformation = Trans_Mul(Trans_Scale(RandomX(900, 1000), RandomX(900, 1000), RandomX(900, 1000)), Trans_Rotate(RandomX(-90, 90), 0, 1, 0));
 	SetClrModulation(RGB(RandomX(200, 255), RandomX(200, 255), RandomX(200, 255)));
+	AddTimer("CheckSpawnMushroom", 120 + Random(120));
 	return true;
 }
 
@@ -44,4 +45,33 @@ public func OnHitByPickaxe(object pickaxe)
 public func CanBeHitByPickaxe()
 {
 	return true;
+}
+
+public func GetSpawnID()
+{
+	return BlueMushroom;
+}
+
+private func CheckSpawnMushroom()
+{
+	if (Random(2)) return;
+	if (GBackSemiSolid()) return;
+	
+	var x = RandomX(-50, 50), y = RandomX(-20, 20);
+	if (GBackSemiSolid(x, y)) return;
+	
+	for (; y < 20; y += 2)
+	{
+		if (!GBackSolid(x, y)) continue;
+		if (!GetMaterialVal("Soil", "Material", GetMaterial(x, y))) return;
+		break;
+	}
+	if (y >= 20) return;
+	
+	var spawn_candidate = this->GetSpawnID();
+	if (!spawn_candidate) return;
+	
+	if (FindObject(Find_Distance(10, x, y), Find_ID(spawn_candidate))) return;
+	var spawn = CreateObjectAbove(spawn_candidate, x, y, GetOwner());
+	spawn->SetCon(5);
 }

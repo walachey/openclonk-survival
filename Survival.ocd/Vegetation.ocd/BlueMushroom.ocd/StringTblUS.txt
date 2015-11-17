@@ -1,0 +1,2 @@
+﻿Name=Blue mushroom
+Description=Restores a few health points. Prickles on the tongue.

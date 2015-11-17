@@ -1,0 +1,2 @@
+﻿Name=Blauer Pilz
+Description=Gibt dem Clonk ein paar Lebenspunkte zurück. Prickelt auf der Zunge.
