@@ -1,0 +1,2 @@
+﻿Name=Grüner Pilz
+Description=Ungenießbar.

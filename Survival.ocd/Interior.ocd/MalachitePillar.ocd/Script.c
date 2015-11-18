@@ -20,3 +20,7 @@ public func Death()
 	RemoveObject();
 }
 
+public func GetSpawnID()
+{
+	return GreenMushroom;
+}
