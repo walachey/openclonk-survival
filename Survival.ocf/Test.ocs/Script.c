@@ -23,6 +23,9 @@ func Initialize()
 	chest->CreateContents(SilverKey, 10);
 	chest->CreateContents(GoldenKey, 10);
 	chest->CreateContents(Pickaxe, 5);
+	chest->CreateContents(Pickaxe_Stone, 5);
+	chest->CreateContents(Pickaxe_Stone)->SetQualityBonus(200);
+	chest->CreateContents(Pickaxe)->SetQualityBonus(200);
 	chest->CreateContents(Shovel, 5);
 	
 	chest->AddOpeningCallback(Scenario.OnChestOpen);

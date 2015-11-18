@@ -4,6 +4,7 @@ QualityMaster=Meisterhaft ~
 
 Durability=Haltbarkeit
 Damage=Schaden
+PickaxeStrength=Effizienz
 
 Contains=Enthält
 

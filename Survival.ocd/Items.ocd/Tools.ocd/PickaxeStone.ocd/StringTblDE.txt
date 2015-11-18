@@ -1,0 +1,4 @@
+Name=Steinspitzhacke
+Description=Mit der Spitzhacke kann man auch ohne Sprengstoff Gestein durchdringen.
+Durability=Haltbarkeit
+PickaxeStrength=Effizienz

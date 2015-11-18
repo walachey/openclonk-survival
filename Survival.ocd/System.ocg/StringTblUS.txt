@@ -4,6 +4,7 @@ QualityMaster=Masterful
 
 Durability=Durability
 Damage=Damage
+PickaxeStrength=Efficacy
 
 Contains=Contains
 

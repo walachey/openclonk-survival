@@ -1,0 +1,4 @@
+Name=Stone pickaxe
+Description=Basic mining tool for mining through rock when no explosives are available.
+Durability=Durability
+PickaxeStrength=Efficacy
