@@ -1,0 +1,2 @@
+Name=Seeigel
+Description=Stachelig, aber eigentlich friedfertig.

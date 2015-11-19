@@ -50,7 +50,7 @@ func Initialize()
 	
 	PricklyPear->Place(3, Shape->Rectangle(LandscapeWidth()/2, 0, LandscapeWidth()/2, LandscapeHeight()));
 	
-	var c = CreateObjectAbove(Ruin_ChemicalLab, 350, 200, -1);
+	var c = CreateObjectAbove(Ruin_ChemicalLab, 400, 200, -1);
 	AddEffect("Toxic", c, 1, 30);
 	
 	var cave = Landscape_Cave->Place(1, Shape->Rectangle(0, LandscapeHeight()/2 - 50, LandscapeWidth(), LandscapeHeight()/2 + 50), {width = 200 + Random(50), height = 100 + Random(50), borderheight = 0, bordermat = "Earth", bordertex = "earth" });
@@ -66,6 +66,9 @@ func Initialize()
 		CreateObject(AzuritePillar, 75 + Random(75), 230, -1);
 		CreateObject(MalachitePillar, 120 + Random(75), 230, -1);
 	}
+	
+	DrawMaterialQuad("Water", 300, 195, 400, 195, 400, 210, 300, 210, true);
+	CastObjects(ShoreUrchin, 5, 10, 350, 190);
 }
 
 func OnChestOpen(object clonk)

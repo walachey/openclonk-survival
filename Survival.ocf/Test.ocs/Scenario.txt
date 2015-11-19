@@ -7,3 +7,8 @@ Version=5,0,0,0
 Definition1=Objects.ocd
 Definition2=Decoration.ocd
 Definition3=Survival.ocd
+
+[Weather]
+Climate=0,10,0,100
+YearSpeed=0,0,0,100
+Wind=-100,0,-100,-100
