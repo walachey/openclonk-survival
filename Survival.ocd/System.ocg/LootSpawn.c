@@ -50,12 +50,12 @@ global func AssignChestLootRarity(int base_rarity)
 	
 	if (this.LootRarity > 700)
 	{
-		this->SetMeshMaterial("GoldChest");
+		this->SetMeshMaterial("GoldenChest");
 		if (key_required) this->LockWithKeyQuality("golden");
 	}
 	else if (this.LootRarity > 400)
 	{
-		this->SetMeshMaterial("SilverChest");
+		this->SetMeshMaterial("MetalChest");
 		if (key_required) this->LockWithKeyQuality("silver");
 	}
 	else

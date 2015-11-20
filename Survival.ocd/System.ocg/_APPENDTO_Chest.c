@@ -8,6 +8,11 @@ local opening_callbacks;
 public func IsContainer() { return is_open; }
 public func RejectCollect() { return is_open == false; }
 
+public func Construction()
+{
+	_inherited(...);
+	SetProperty("MeshTransformation",Trans_Rotate(RandomX(90-45, 90+45),0,1,0));
+}
 
 public func AddOpeningCallback(callback)
 {
