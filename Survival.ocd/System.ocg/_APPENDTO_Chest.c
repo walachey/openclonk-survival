@@ -129,3 +129,12 @@ public func GetInfoMenuEntries()
 	
 	return [{symbol = this, custom = menu}];
 }
+
+// Prevent auto-opening and closing.
+public func OnShownInInteractionMenuStart(bool first)
+{
+}
+
+public func OnShownInInteractionMenuStop(bool last)
+{
+}
