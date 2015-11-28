@@ -1,0 +1,2 @@
+Name=Feuersteinpulver
+Description=Gemahlener Feuerstein.

@@ -1,0 +1,2 @@
+Name=Firestone Powder
+Description=Ground firestone.
