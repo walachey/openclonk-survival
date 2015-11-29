@@ -1,0 +1,9 @@
+[Head]
+Icon=15
+Title=No Man's Land
+Version=5,0,0,0
+
+[Definitions]
+Definition1=Objects.ocd
+Definition2=Decoration.ocd
+Definition3=Survival.ocd
