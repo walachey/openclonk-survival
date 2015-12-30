@@ -3,6 +3,7 @@ QualitySuperior=Besonders ~
 QualityMaster=Meisterhaft ~
 
 Durability=Haltbarkeit
+Range=Reichweite
 Damage=Schaden
 PickaxeStrength=Effizienz
 

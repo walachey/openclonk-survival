@@ -3,6 +3,7 @@ QualitySuperior=Superior
 QualityMaster=Masterful
 
 Durability=Durability
+Range=Range
 Damage=Damage
 PickaxeStrength=Efficacy
 
