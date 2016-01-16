@@ -7,7 +7,7 @@
 		{
 			WeaponDamage = 
 			{
-				Name = "$TxtWpnDmg$,
+				Name = "$Damage$,
 				Base = 50,
 				FullBonus = 30, 
 			}
