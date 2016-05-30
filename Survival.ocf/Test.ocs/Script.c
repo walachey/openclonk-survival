@@ -13,6 +13,11 @@ func Initialize()
 	chest->CreateContents(Bow)->SetQualityBonus(50);
 	chest->CreateContents(Bow)->SetQualityBonus(100);
 	chest->CreateContents(Bow)->SetQualityBonus(200);
+	chest->CreateContents(CrudeBow, 5);
+	chest->CreateContents(CrudeBow)->SetQualityBonus(50);
+	chest->CreateContents(CrudeBow)->SetQualityBonus(100);
+	chest->CreateContents(CrudeBow)->SetQualityBonus(200);
+	chest->CreateContents(Arrow, 5);
 	chest->CreateContents(StoneKnife, 5);
 	chest->CreateContents(StoneKnife)->SetQualityBonus(200);
 	chest->CreateContents(MushroomPowder, 5);

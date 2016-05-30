@@ -1,0 +1,2 @@
+Name=Provisorischer Bogen
+Description=Schwächer als der normale Bogen.

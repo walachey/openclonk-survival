@@ -1,0 +1,2 @@
+Name=Crude Bow
+Description=Weaker than the normal bow.
