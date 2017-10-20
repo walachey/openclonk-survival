@@ -1,2 +1,2 @@
 Name=Primitive Stacheln
-Description=Spitze Fuﬂfalle.
+Description=Spitze Fu√üfalle.

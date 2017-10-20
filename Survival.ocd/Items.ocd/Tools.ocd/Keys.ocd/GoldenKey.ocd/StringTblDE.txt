@@ -1,2 +1,2 @@
-Name=Goldschlüssel
-Description=Öffnet auch die kompliziertesten Schlösser.
+Name=GoldschlÃ¼ssel
+Description=Ã–ffnet auch die kompliziertesten SchlÃ¶sser.

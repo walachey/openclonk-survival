@@ -1,2 +1,2 @@
-Name=Malachits‰ule
+Name=Malachits√§ule
 Description=Kann mit einer Spitzhake abgebaut werden.
