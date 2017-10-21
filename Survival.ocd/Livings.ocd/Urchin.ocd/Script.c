@@ -1,7 +1,5 @@
 local Name = "$Name$";
 local Description = "$Description$";
-local ContactCalls = true;
-local BorderBound = C4D_Border_Sides;
 
 public func Construction()
 {
