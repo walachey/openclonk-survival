@@ -5,8 +5,6 @@ public func Construction()
 {
 	AddEffect("Activity", this, 1, 10, this);
 	SetAction("Walk");
-	if (GetOwner() == NO_OWNER)
-		SetCreatureControlled();
 	this.MeshTransformation = Trans_Rotate(Random(360), 0, 1, 0);
 	return true;
 }
@@ -53,6 +51,8 @@ local MaxBreath = 100000;
 local NoBurnDecay = 1;
 local ContactIncinerate = 0;
 local CorrosionResist = 0;
+local BorderBound = C4D_Border_Sides;
+local ContactCalls = true;
 
 local ActMap = {
 Walk = {

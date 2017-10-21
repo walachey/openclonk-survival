@@ -11,5 +11,3 @@ VertexY=2, 2
 VertexFriction=50,50
 Value=1
 Mass=2
-Components=Stone=2
-
