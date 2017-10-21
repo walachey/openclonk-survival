@@ -16,3 +16,10 @@ Locked=Locked.
 WrongKey=The key does not fit.
 LockedInfoTxt=This %s is locked.|To open it you need a fitting key.
 ClosedInfoTxt=To peek at the treasures and dangers inside this chest, you need to open it.
+
+# Clonk interaction menu
+StatsAndSkills=Stats and Skills
+Stats=Stats
+Skills=Skills
+Knowledge=Knowledge
+AvailablePoints=Available Points

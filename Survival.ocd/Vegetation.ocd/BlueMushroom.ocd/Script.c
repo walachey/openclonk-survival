@@ -94,6 +94,7 @@ private func FxBlowUpEffectTimer(object target, effect fx, int time)
 public func ControlUse(object clonk)
 {
 	clonk->Eat(this);
+	return true;
 }
 
 // Nutritional value depends on the completion of the mushroom.

@@ -1,0 +1,6 @@
+[DefCore]
+id=PlayerHUD
+Version=7,0
+Category=C4D_StaticBack
+Width=1
+Height=1

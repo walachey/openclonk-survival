@@ -11,4 +11,3 @@ VertexY=4, 4
 VertexFriction=50,50
 Value=5
 Mass=2
-

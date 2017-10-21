@@ -13,6 +13,11 @@ func Initialize()
 	chest->CreateContents(Bow)->SetQualityBonus(50);
 	chest->CreateContents(Bow)->SetQualityBonus(100);
 	chest->CreateContents(Bow)->SetQualityBonus(200);
+	chest->CreateContents(CrudeBow, 5);
+	chest->CreateContents(CrudeBow)->SetQualityBonus(50);
+	chest->CreateContents(CrudeBow)->SetQualityBonus(100);
+	chest->CreateContents(CrudeBow)->SetQualityBonus(200);
+	chest->CreateContents(Arrow, 5);
 	chest->CreateContents(StoneKnife, 5);
 	chest->CreateContents(StoneKnife)->SetQualityBonus(200);
 	chest->CreateContents(MushroomPowder, 5);
@@ -74,6 +79,10 @@ func Initialize()
 	
 	DrawMaterialQuad("Water", 300, 195, 400, 195, 400, 210, 300, 210, true);
 	CastObjects(ShoreUrchin, 5, 10, 350, 190);
+	
+	DrawMaterialQuad("Earth", 50, 100, 400, 100, 400, 125, 50, 125, true);
+	DrawMaterialQuad("Earth", 50, 100, 60, 100, 60, 150, 50, 150, true);
+	CastObjects(Slime, 5, 15, 100, 80);
 }
 
 func OnChestOpen(object clonk)
