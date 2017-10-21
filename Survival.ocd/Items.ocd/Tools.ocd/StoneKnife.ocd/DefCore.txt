@@ -11,5 +11,4 @@ VertexY=0, 0, -3, 3
 VertexFriction=50,50, 50, 50
 Value=3
 Mass=2
-Components=Wood=2;Flintstones=2
 Rotate=1

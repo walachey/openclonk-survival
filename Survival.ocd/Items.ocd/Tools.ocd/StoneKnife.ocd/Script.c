@@ -119,3 +119,4 @@ local Collectible = 1;
 local Name = "$Name$";
 local Description = "$Description$";
 local Rebuy = true;
+local Components = [[Wood, 2], [Flintstones, 2]];

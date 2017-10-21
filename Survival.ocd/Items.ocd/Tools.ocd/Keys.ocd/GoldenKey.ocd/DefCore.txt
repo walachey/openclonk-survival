@@ -11,5 +11,4 @@ VertexY=4, 4
 VertexFriction=50,50
 Value=30
 Mass=5
-Components=Nuget=10
 
