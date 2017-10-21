@@ -112,6 +112,7 @@ public func ControlUse(object clonk)
 	clonk->Eat(this);
 	if (clonk)
 		clonk->~DoDaze(300);
+	return true;
 }
 
 // Nutritional value depends on the completion of the mushroom.

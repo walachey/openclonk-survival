@@ -93,7 +93,7 @@ func CheckStrike(iTime)
 			// don't hit objects twice
 			if(!GetEffect(effect_name, obj))
 			{
-				AddEffect(effect_name, obj, 1, 60 /* arbitrary */, nil, 0);
+				AddEffect(effect_name, obj, 1, 60 /* arbitrary */, nil, nil);
 
 				if(GetEffect(axe_name, obj))
 				{
@@ -101,7 +101,7 @@ func CheckStrike(iTime)
 				}
 				else
 				{
-					AddEffect(axe_name, obj, 1, 40, nil, 0);
+					AddEffect(axe_name, obj, 1, 40, nil, nil);
 				}
 				DoWear(2 * this.WeaponStrength);
 				DealDamage(obj, this.WeaponStrength * 1000, DMG_Slash);

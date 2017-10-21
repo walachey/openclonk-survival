@@ -1,5 +1,7 @@
 #appendto Clonk
 
+static all_player_character_sheets;
+
 public func Construction()
 {
 	this.BleedDamage = 0;
@@ -25,6 +27,21 @@ public func Construction()
 		AbortCall = "StopUnconscious",
 		NoOtherAction = 0,
 	};
+	
+	return _inherited(...);
+}
+
+public func Recruitment()
+{	
+	if (all_player_character_sheets == nil)
+		all_player_character_sheets = [];
+	if (all_player_character_sheets[GetOwner()] == nil)
+	{
+		all_player_character_sheets[GetOwner()] = Stats->Init();
+		this.character = all_player_character_sheets[GetOwner()];
+	}
+	
+	PlayerHUD->Update(this);
 	
 	return _inherited(...);
 }
@@ -235,4 +252,73 @@ private func FxStatusUnconsciousStop(object target, effect fx, int reason, temp)
 		target->PlayAnimation("KneelDown", CLONK_ANIM_SLOT_Movement, Anim_Linear(length, length, 0, duration, ANIM_Remove), Anim_Linear(0, 0, 1000, 5, ANIM_Hold));
 		ScheduleCall(target, "EndKneel", duration, 1);
 	}
+}
+
+private func MakeProgressBar(string text, id symbol, int color, int color_back)
+{
+	var container = 
+	{
+		Bottom = "2em",
+		text = 
+		{
+			Style = GUI_NoCrop | GUI_TextLeft | GUI_TextVCenter,
+			Right = "10em",
+			Text = text
+		},
+		bar_container = 
+		{
+			Left = "10em",
+			Margin = "0.5em",
+			BackgroundColor = RGB(200, 200, 200),
+			
+			bar_background = 
+			{
+				Margin = "0.1em",
+				BackgroundColor = color_back,
+				
+				bar = 
+				{
+					Margin = "0.05em",
+					BackgroundColor = color,
+					
+					symbol = 
+					{
+						Symbol = Icon_Menu_DarkCircle,
+						Left = "100% - 1em",
+						Right = "100% + 1em",
+						
+						actual_symbol = {Symbol = symbol}
+					}
+				}
+			}
+		}
+	};
+	return container;
+}
+
+private func OpenStatusUI()
+{
+	var menu = 
+	{
+		Style = GUI_Multiple | GUI_FitChildren | GUI_VerticalLayout,
+		Left = "2em", Right = "40em",
+		
+	};
+	this.status_ui_id = GuiOpen(menu);
+}
+
+private func CloseStatusUI()
+{
+	if (!this.status_ui_id) return;
+	GuiClose(this.status_ui_id);
+}
+
+public func OnShiftCursor()
+{
+	CloseStatusUI();
+}
+
+public func OnSelection()
+{
+	OpenStatusUI();
 }
