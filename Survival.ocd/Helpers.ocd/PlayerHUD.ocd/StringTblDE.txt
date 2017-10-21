@@ -1,0 +1,7 @@
+# Status effects
+Hunger=Hunger
+Thirst=Durst
+Hitpoints=Leben
+Unconscious=Bewusstlos
+Fracture=Fraktur
+Bleeding=Blutend

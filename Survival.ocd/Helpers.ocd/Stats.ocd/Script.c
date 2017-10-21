@@ -9,7 +9,7 @@ local Plane = 1;
 
 public func Init()
 {
-	return
+	var character_sheet = 
 	{
 		// Stats are the base of the attributes.
 		stats =
@@ -30,7 +30,13 @@ public func Init()
 		},
 		CalculateAttributes = this.CalculateAttributes,
 		GetAttributeValue = this.GetAttributeValue,
+		skillpoints = 0,
 	};
+	
+	for (var available_skill in AllPassiveSkills)
+		character_sheet.skills.available[available_skill->GetName()] = available_skill;
+	
+	return character_sheet;
 }
 
 public func GetAttributeValue(string attribute_name)
@@ -73,48 +79,44 @@ public func CalculateAttributes()
 	}
 }
 
-private func Effect_Calculate(int stat_value, int attr_value)
+local Stats_Effect = 
 {
-	var value = stat_value;
-	if (!this.is_base_value) value = attr_value;
-	return this.factor * value ** this.exponent / 10000;
-}
-
-public func Effect()
-{
-	return
+	GetName = Global.GetName,
+	affects = nil,
+	is_base_value = false,
+	factor = 1,
+	exponent = 0,
+	Calculate = func(int stat_value, int attr_value)
 	{
-		affects = nil,
-		is_base_value = false,
-		factor = 1,
-		exponent = 0,
-		Calculate = this.Effect_Calculate,
-	};
-}
-
-public func Stat_Calculate(proplist attributes)
-{
-	for (var fx in this.effects)
-	{
-		var attr = attributes[fx.affects];
-		if (!attr) continue;
-		var calculated = fx->Calculate(this.value, attr.value);
-		attr.value += calculated;
+		var value = stat_value;
+		if (!this.is_base_value) value = attr_value;
+		return this.factor * value ** this.exponent / 10000;
 	}
+};
+
+private func MakeStat(int start)
+{
+	return new Stats_Stat { value = start };
 }
 
-public func Stat(int start)
-{
-	return
+local Stats_Stat = {
+	GetName = Global.GetName,
+	value = nil,
+	effects =
 	{
-		value = start,
-		effects =
+		
+	},
+	Calculate = func (proplist attributes)
+	{
+		for (var fx in this.effects)
 		{
-			
-		},
-		Calculate = this.Stat_Calculate,
-	};
-}
+			var attr = attributes[fx.affects];
+			if (!attr) continue;
+			var calculated = fx->Calculate(this.value, attr.value);
+			attr.value += calculated;
+		}
+	}
+};
 
 public func Skills_Learn(string name)
 {
@@ -132,46 +134,48 @@ public func Skills_Learn(string name)
 	return true;
 }
 
-public func Skill_FulfillDependency(string name)
+public func MakeSkill(symbol, string name, string description, activate)
 {
-	for (var dependency in this.depends_on)
-	{
-		if (dependency->GetName() == name)
-		{
-			dependency.ok = true;
-		}
-	}
-}
-
-public func Skill_SetDependency(string name)
-{
-	PushBack(this.dependencies,
-	{
-		Name = name,
-		ok = false
-	});
-}
-
-public func Skill_CanBeLearned()
-{
-	for (var dependency in this.depends_on)
-	{
-		if (!dependency.ok) return false;
-	}
-	return true;
-}
-
-public func Skill(symbol, string name, string description, activate)
-{
-	return
+	return new Stats_Skill
 	{
 		symbol = symbol,
 		Name = name,
 		Description = description,
 		Activate = activate,
-		depends_on = [],
-		SetDependency = this.Skill_SetDependency,
-		FulfillDependency = this.Skill_FulfillDependency,
-		CanBeLearned = this.Skill_CanBeLearned,
 	};
 }
+
+local Stats_Skill = {
+	GetName = Global.GetName,
+	symbol = nil,
+	Name = nil,
+	Description = nil,
+	Activate = nil,
+	depends_on = [],
+	SetDependency = func(string name)
+	{
+		PushBack(this.dependencies,
+		{
+			Name = name,
+			ok = false
+		});
+	},
+	FulfillDependency = func(string name)
+	{
+		for (var dependency in this.depends_on)
+		{
+			if (dependency->GetName() == name)
+			{
+				dependency.ok = true;
+			}
+		}
+	},
+	CanBeLearned = func()
+	{
+		for (var dependency in this.depends_on)
+		{
+			if (!dependency.ok) return false;
+		}
+		return true;
+	},
+};
