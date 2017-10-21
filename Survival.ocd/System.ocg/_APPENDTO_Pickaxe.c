@@ -17,7 +17,7 @@ protected func DoSwing(object clonk, int ix, int iy)
 	//Creates an imaginary line which runs for 'maxreach' distance (units in pixels)
 	//or until it hits a solid wall.
 	var iDist=0;
-	while(!GBackSolid(Sin(180-angle,iDist),Cos(180-angle,iDist)) && iDist < maxreach)
+	while(!GBackSolid(Sin(180-angle,iDist),Cos(180-angle,iDist)) && iDist < MaxReach)
 	{
 		++iDist;
 	}
