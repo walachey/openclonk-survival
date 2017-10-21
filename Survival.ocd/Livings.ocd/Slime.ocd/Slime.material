@@ -1,0 +1,25 @@
+material Slime 
+{
+    receive_shadows on
+    technique
+    {
+        pass
+        {
+            cull_hardware none
+			scene_blend alpha_blend
+			depth_check off
+			
+            ambient 0.9 0.9 0.9 1.0
+            diffuse 0.9 0.9 0.9 1.0
+            specular 1.0 1.0 1.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            texture_unit 
+            {
+                texture Slime_UV.png
+                tex_address_mode wrap
+                filtering trilinear
+            }
+        }
+    }
+}
