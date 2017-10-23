@@ -7,11 +7,11 @@ Range=Reichweite
 Damage=Schaden
 PickaxeStrength=Effizienz
 
-Contains=EnthÃ¤lt
+Contains=Enthält
 
 # Chest
 Open=Öffnen
-NeedsKey=Die Kiste ist abgeschlossen und braucht einen SchlÃ¼ssel.
+NeedsKey=Die Kiste ist abgeschlossen und braucht einen Schlüssel.
 Locked=Abgeschlossen.
 WrongKey=Der Schlüssel passt nicht.
 LockedInfoTxt=Diese %s ist abgeschlossen|Zum Öffnen wird ein passender Schlüssel gebraucht.
