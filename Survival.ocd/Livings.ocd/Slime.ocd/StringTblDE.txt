@@ -1,2 +1,2 @@
-Name=Höhlenigel
+Name=HÃ¶hlenigel
 Description=Stachelig, aber eigentlich friedfertig.

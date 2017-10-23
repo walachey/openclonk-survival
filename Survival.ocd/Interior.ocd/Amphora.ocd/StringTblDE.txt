@@ -1,2 +1,2 @@
 Name=Amphore
-Description=Kann Sch‰tze verbergen.
+Description=Kann Sch√§tze verbergen.

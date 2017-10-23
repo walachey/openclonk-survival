@@ -1,2 +1,2 @@
-Name=Azurits‰ule
+Name=Azurits√§ule
 Description=Kann mit einer Spitzhake abgebaut werden.

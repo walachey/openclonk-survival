@@ -17,3 +17,4 @@ public func CanUnlock(string quality)
 local Collectible = 1;
 local Name = "$Name$";
 local Description = "$Description$";
+local Components = [[Wood, 2]];

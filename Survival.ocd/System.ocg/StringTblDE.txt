@@ -7,19 +7,19 @@ Range=Reichweite
 Damage=Schaden
 PickaxeStrength=Effizienz
 
-Contains=Enthält
+Contains=EnthÃƒÂ¤lt
 
 # Chest
-Open=Öffnen
-NeedsKey=Die Kiste ist abgeschlossen und braucht einen Schlüssel.
+Open=Ã–ffnen
+NeedsKey=Die Kiste ist abgeschlossen und braucht einen SchlÃƒÂ¼ssel.
 Locked=Abgeschlossen.
-WrongKey=Der Schlüssel passt nicht.
-LockedInfoTxt=Diese %s ist abgeschlossen|Zum Öffnen wird ein passender Schlüssel gebraucht.
-ClosedInfoTxt=Um an die Schätze und Gefahren in dieser Kiste zu kommen, musst du sie öffnen.
+WrongKey=Der SchlÃ¼ssel passt nicht.
+LockedInfoTxt=Diese %s ist abgeschlossen|Zum Ã–ffnen wird ein passender SchlÃ¼ssel gebraucht.
+ClosedInfoTxt=Um an die SchÃ¤tze und Gefahren in dieser Kiste zu kommen, musst du sie Ã¶ffnen.
 
 # Clonk interaction menu
-StatsAndSkills=Attribute und Fähigkeiten
+StatsAndSkills=Attribute und FÃ¤higkeiten
 Stats=Attribute
-Skills=Fähigkeiten
+Skills=FÃ¤higkeiten
 Knowledge=Wissen
-AvailablePoints=Verfügbare Punkte
+AvailablePoints=VerfÃ¼gbare Punkte

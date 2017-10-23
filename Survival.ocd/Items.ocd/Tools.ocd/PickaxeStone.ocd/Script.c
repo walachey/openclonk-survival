@@ -2,6 +2,7 @@
 
 local Name = "$Name$";
 local Description = "$Description$";
+local Components = [[Wood, 1], [Rock, 2]];
 
 local MaxWear = 50;
 local PickaxeStrength = 20;

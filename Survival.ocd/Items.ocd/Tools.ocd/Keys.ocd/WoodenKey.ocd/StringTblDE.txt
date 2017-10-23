@@ -1,2 +1,2 @@
-Name=Holzschlüssel
-Description=Öffnet einfache Schlösser.
+Name=HolzschlÃ¼ssel
+Description=Ã–ffnet einfache SchlÃ¶sser.
