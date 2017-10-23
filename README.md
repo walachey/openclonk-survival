@@ -3,7 +3,7 @@
 This is a mod for the free and open-source game [OpenClonk](http://openclonk.org/).
 It's a mod that enriches the usual combat and item systems, aiming at providing different challenges from a normal Clonk settlement game. Your main objective will be not to die one of the plenty possible deaths.
 
-* This mod requires at the current nightly build of OpenClonk.
+* This mod requires the current [nightly build](http://www.openclonk.org/nightly-builds/) of OpenClonk.
 * OpenClonk Survival is currently not in a playable state but a work in progress.
 
 
